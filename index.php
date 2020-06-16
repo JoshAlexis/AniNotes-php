@@ -1,8 +1,8 @@
 <?php 
-    
-    require_once('./Config/Routes.php');
-    use Config\Routing\Router;
-    // Route::redirect($_SERVER['REQUEST_URI']);
-    // Route::run();
-    Router::allRoutes();
+    /* require_once(SITE_ROOT . "/Config/Router.php");
+    require_once(SITE_ROOT . "/Config/Routes.php"); */
+    require_once('./autoload.php');
+    require_once(SITE_ROOT . "/Config/Routes.php");
+    use Config\Router;
+    Router::run();
 ?>
