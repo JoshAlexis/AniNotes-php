@@ -8,5 +8,9 @@
         public static function index(){
             require_once(SITE_ROOT . "/Views/sauce.php");
         }
+
+        public static function showEdit(){
+            require_once(SITE_ROOT. "/Views/sauce/editSauce.php");
+        }
     }
 ?>

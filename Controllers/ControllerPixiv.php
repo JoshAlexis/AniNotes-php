@@ -7,7 +7,11 @@
 
     class ControllerPivix extends Controller{
         public static function index(){
-            require_once(SITE_ROOT . "/Views/pixiv.php");
+            require_once(SITE_ROOT . "/Views/pixiv/pixiv.php");
+        }
+
+        public static function showEdit(){
+            require_once(SITE_ROOT . "/Views/pixiv/editPixiv.php");
         }
     }
 
