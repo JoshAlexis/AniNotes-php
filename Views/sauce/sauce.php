@@ -6,6 +6,6 @@
     <title>AniNotes</title>
 </head>
 <body>
-    <h1>Index</h1>
+    <h1>Sauce</h1>
 </body>
 </html>
