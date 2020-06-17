@@ -4,8 +4,10 @@
     require_once(SITE_ROOT . "/Controllers/ControllerPixiv.php");
     require_once(SITE_ROOT . "/Controllers/ControllerIllustrator.php");
     require_once(SITE_ROOT . "/Controllers/ControllerSauce.php");
+    use Controllers\Controller;
     use Controllers\ControllerPivix;
     use Controllers\ControllersIllustrator;
+    use Controllers\ControllerSauce;
     
     /**
      * Provides methods to create routes and it's control
@@ -26,10 +28,8 @@
                     self::$lastRouteUsed == $route;
                 }
             }
-            $elements = explode('#',$matched_route['controller']);
-            $controller = self::getControllerInstance($elements[0]);
-            $function = $elements[1];
-            call_user_func([$controller, $function]);
+            
+            self::callController($matched_route);
         }
 
         public static function get($route,$controller){
@@ -57,6 +57,28 @@
                 return new ControllerPivix();
             }else if($controller == 'ControllerIllustrator'){
                 return new ControllersIllustrator();
+            }else if($controller == 'ControllerSauce'){
+                return new ControllerSauce();
+            }else if($controller == 'Controller'){
+                return new Controller();
+            }
+        }
+
+        private static function redirect($path = "error"){
+            if(!$path == "error"){
+                
+            }
+            require_once(SITE_ROOT . "/Views/404.php");
+        }
+
+        private static function callController($matched_route){
+            if(!empty($matched_route)){
+                $elements = explode('#',$matched_route['controller']);
+                $controller = self::getControllerInstance($elements[0]);
+                $function = $elements[1];
+                call_user_func([$controller, $function]);
+            }else{
+                self::redirect();
             }
         }
     }
