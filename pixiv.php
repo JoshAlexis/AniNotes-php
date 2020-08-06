@@ -1,3 +1,11 @@
+<?php 
+require_once "./models/DBConnection.php";
+require_once "./utils/FetchModelData.php";
+require_once "./utils/TableNames.php";
+$con = DBConnection::connect();
+$pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,70 +42,20 @@
                             <th>Actions</th>
                         </thead>
                         <tbody>
+                            <?php foreach($pixivList as $pixiv) {?>
                             <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
+                                <td><?= $pixiv->pixivName ?></td>
+                                <td>
+                                    <a href="<?= $pixiv->Link ?>" target="_blank">
+                                        <?= $pixiv->idPixiv ?>
+                                    </a>
+                                </td>
+                                <td><?= $pixiv->Content ?></td>
+                                <td><?= $pixiv->Quality ?></td>
+                                <td><?= $pixiv->Favorite ?></td>
                                 <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
-                            <tr>
-                                <td>InJapanese</td>
-                                <td>12399123</td>
-                                <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
-                                <td>++++</td>
-                                <td>FF+</td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
