@@ -48,10 +48,4 @@ class Pixiv extends Model{
             echo "Error on update {$e->getMessage()}";
         }
     }
-
-    public function getAll(PDO $con): array{
-        $stmt = $con->prepare(QueryStrings::PIXIV_FETCH);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_OBJ);
-    }
 }
