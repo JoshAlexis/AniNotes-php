@@ -14,7 +14,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-dark bg-primary">
-            <a href="./index.html" class="navbar-brand">Aninotes</a>
+            <a href="./index.php" class="navbar-brand">Aninotes</a>
         </nav>
         <div class="row">
             <div class="col-md-12">
@@ -40,7 +40,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -48,7 +48,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -56,7 +56,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -64,7 +64,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -72,7 +72,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -80,7 +80,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -88,7 +88,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>InJapanese</td>
@@ -96,7 +96,7 @@
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>++++</td>
                                 <td>FF+</td>
-                                <td><a href="./editPixiv.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                         </tbody>
                     </table>

@@ -9,9 +9,9 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-dark bg-primary">
-            <a href="./index.html" class="navbar-brand">Aninotes</a>
+            <a href="./index.php" class="navbar-brand">Aninotes</a>
             <div class="navbar-nav mr-auto">
-                <a href="./sauces.html">⬅</a>
+                <a href="./sauces.php">⬅</a>
             </div>
         </nav>
         <div class="row">

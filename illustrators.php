@@ -8,7 +8,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-dark bg-primary">
-            <a href="./index.html" class="navbar-brand">Aninotes</a>
+            <a href="./index.php" class="navbar-brand">Aninotes</a>
         </nav>
         <div class="row">
             <div class="col-md-12">
@@ -32,35 +32,35 @@
                                 <td>Devianart</td>
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci consequuntur illo odit animi libero fugit.</td>
-                                <td><a href="./editIllustrator.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editIllustrator.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>Illustrator name</td>
                                 <td>Devianart</td>
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci consequuntur illo odit animi libero fugit.</td>
-                                <td><a href="./editIllustrator.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editIllustrator.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>Illustrator name</td>
                                 <td>Devianart</td>
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci consequuntur illo odit animi libero fugit.</td>
-                                <td><a href="./editIllustrator.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editIllustrator.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>Illustrator name</td>
                                 <td>Devianart</td>
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci consequuntur illo odit animi libero fugit.</td>
-                                <td><a href="./editIllustrator.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editIllustrator.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>Illustrator name</td>
                                 <td>Devianart</td>
                                 <td>Azur lane, girls, Honkai, Fate, fantasy, bb</td>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci consequuntur illo odit animi libero fugit.</td>
-                                <td><a href="./editIllustrator.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editIllustrator.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                         </tbody>
                     </table>

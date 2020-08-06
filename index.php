@@ -10,9 +10,9 @@
 <body>
     <h1>Aninotes</h1>
     <ul>
-        <li><a href="pixiv.html">Pixiv</a></li>
-        <li><a href="illustrators.html">Illustrators</a></li>
-        <li><a href="sauces.html">sauces</a></li>
+        <li><a href="./pixiv.php">Pixiv</a></li>
+        <li><a href="./illustrators.php">Illustrators</a></li>
+        <li><a href="./sauces.php">sauces</a></li>
     </ul>
 </body>
 </html>

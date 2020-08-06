@@ -10,7 +10,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-dark bg-primary">
-            <a href="./index.html" class="navbar-brand">Aninotes</a>
+            <a href="./index.php" class="navbar-brand">Aninotes</a>
         </nav>
         <div class="row">
             <div class="col-md-12">
@@ -34,21 +34,21 @@
                                 <td>No</td>
                                 <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sunt impedit officia. Molestiae pariatur quae consequuntur aliquam magni! Inventore, iure!</td>
                                 <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sunt impedit officia. Molestiae pariatur quae consequuntur aliquam magni! Inventore, iure!</td>
-                                <td><a href="./editSauce.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editSauce.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias placeat ea eveniet sunt? Tempore, soluta.</td>
                                 <td>No</td>
                                 <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sunt impedit officia. Molestiae pariatur quae consequuntur aliquam magni! Inventore, iure!</td>
                                 <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sunt impedit officia. Molestiae pariatur quae consequuntur aliquam magni! Inventore, iure!</td>
-                                <td><a href="./editSauce.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editSauce.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <tr>
                                 <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias placeat ea eveniet sunt? Tempore, soluta.</td>
                                 <td>No</td>
                                 <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sunt impedit officia. Molestiae pariatur quae consequuntur aliquam magni! Inventore, iure!</td>
                                 <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sunt impedit officia. Molestiae pariatur quae consequuntur aliquam magni! Inventore, iure!</td>
-                                <td><a href="./editSauce.html" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editSauce.php" class="btn btn-primary">Edit</a></td>
                             </tr>
                         </tbody>
                     </table>
