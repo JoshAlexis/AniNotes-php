@@ -4,7 +4,10 @@ require_once "./utils/FetchModelData.php";
 require_once "./utils/TableNames.php";
 $con = DBConnection::connect();
 $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
-
+$post = false;
+if(isset($_POST['idPixiv'])){
+    $post = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +27,18 @@ $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
         <nav class="navbar navbar-dark bg-primary">
             <a href="./index.php" class="navbar-brand">Aninotes</a>
         </nav>
+        <?php if($post){?>
+            <div class="row">
+                <div class="col-md-4 m-auto pt-4">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <p>Post Request Working</p>
+                        <button type="button" class="close" data-diss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        <?php }?>
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center text-primary">Pixiv</h1>
@@ -62,60 +77,15 @@ $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
             </div>
         </section>
         <div class="row">
-            <div class="col-md-12 m-auto pt-3">
-                <h2 class="text-center text-primary">Add Pixiv</h2>
+            <div class="col-md-12 text-center mt-4 mb-4">
+                <a class="btn btn-primary" href="./addPixiv.php">Add Pixiv</a>
             </div>
         </div>
         <!-- Form Input -->
-        <section class="row">
-            <div class="col-md-4 m-auto">
-                <form action="">
-                    <div class="form-group">
-                        <label for="idPixiv">IdPixiv</label>
-                        <input type="number" name="idPixiv" class="form-control"
-                        required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pixivName">Pixiv Name</label>
-                        <input type="text" name="pixivName" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="Content">Content</label>
-                        <textarea name="Content" class="form-control" required></textarea>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="Quality">Content</label>
-                            <select name="Quality" class="form-control">
-                                <option value="+">+</option>
-                                <option value="++">++</option>
-                                <option value="+++">+++</option>
-                                <option value="++++">++++</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="Favorite">Favorite</label>
-                            <select name="Favorite" class="form-control">
-                                <option value="No">No</option>
-                                <option value="F">F</option>
-                                <option value="FF">FF</option>
-                                <option value="FF+">FF+</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Link">Pixiv Link</label>
-                        <input type="url" name="Link" class="form-control" required>
-                    </div>
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-block btn-success">Add Pixiv</button>
-                    </div>
-                </form>
-            </div>
-        </section>
     </div>
-    <script src="./js/jquery-3.5.1.min.js"></script>
+    <!-- <script src="./js/jquery-3.5.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script> 
+    <script src="./js/bootstrap.min.js"></script>  -->
+    <script src="./js/app.js"></script>
 </body>
 </html>
