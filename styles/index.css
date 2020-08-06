@@ -1,0 +1,28 @@
+:root{
+    --blue-material: #005cb2;
+}
+h1, a{
+    color: var(--blue-material);
+}
+h1{
+    text-align: center;
+    position: relative;
+    top: 30vh;
+    font-size: 3.5rem;;
+}
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+ul{
+    position: relative;
+    top: 35vh;
+    width: 25vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+ul li{
+    list-style: none;
+}
