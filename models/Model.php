@@ -1,5 +1,5 @@
 <?php 
 abstract class Model{
-    abstract protected function insert(Model $item, PDO $con): bool;
-    abstract protected function update(Model $item, PDO $con): bool;
+    abstract public function insert(PDO $con);
+    abstract public function update(PDO $con);
 }
