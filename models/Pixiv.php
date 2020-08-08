@@ -1,51 +1,65 @@
 <?php 
-require_once "./Model.php";
-require_once "./QueryStrings.php";
+require_once "Model.php";
+require_once "./utils/QueryStrings.php";
 
 class Pixiv extends Model{
-    private $id;
-    private $idPixiv;
-    private $pixivName;
-    private $content;
-    private $quality;
-    private $favorite;
-    private $link;
+    public $idPixiv;
+    public $pixivName;
+    public $content;
+    public $quality;
+    public $favorite;
+    public $link;
 
-    public function __construct(int $id = 0, string $idPixiv, string $pixivName, string $content, string $quality, string $favorite, string $link) {
-        $this->id = $id;
-        $this->idPixiv = $idPixiv;
-        $this->pixivName = $pixivName;
-        $this->content = $content;
-        $this->quality = $quality;
-        $this->favorite = $favorite;
-        $this->link = $link;
+    public function __construct() {
+        $this->idPixiv = "";
+        $this->pixivName = "";
+        $this->content = "";
+        $this->quality = "";
+        $this->favorite = "";
+        $this->link = "";
     }
 
-    public function insert(Model $item, PDO $con): bool{
+    public function insert(PDO $con){
         try{
-            if($item->pixivName !== "" || $item->pixivName !== null){
-                $stmt = $con->prepare(QueryStrings::PIXIV_INSERT_NAME);
-                return $stmt->execute((array) $item);
-            }else{
+            if($this->pixivName === ""){
                 $stmt = $con->prepare(QueryStrings::PIXIV_INSERT_NO_NAME);
-                return $stmt->execute((array) $item);
+
+                $stmt->bindParam(":idPixiv", $this->idPixiv);
+                $stmt->bindParam(":content", $this->content);
+                $stmt->bindParam(":quality", $this->quality);
+                $stmt->bindParam(":favorite", $this->favorite);
+                $stmt->bindParam(":link", $this->link);
+                
+                return $stmt->execute();
+
+            }else{
+                $stmt = $con->prepare(QueryStrings::PIXIV_INSERT_NAME);
+                
+                $stmt->bindParam(":idPixiv", $this->idPixiv);
+                $stmt->bindParam(":pixivName", $this->pixivName);
+                $stmt->bindParam(":content", $this->content);
+                $stmt->bindParam(":quality", $this->quality);
+                $stmt->bindParam(":favorite", $this->favorite);
+                $stmt->bindParam(":link", $this->link);
+
+                return $stmt->execute();
             }
         }catch(PDOException $e){
-            echo "Error on insert {$e->getMessage()}";
+            return "Error on insert {$e->getMessage()}";
         }
     }
 
-    public function update(Model $item, PDO $con): bool{
+    public function update(PDO $con){
         try{
-            if($item->pixivName !== "" || $item->pixivName !== null){
+            if($this->pixivName !== "" || $this->pixivName !== null){
                 $stmt = $con->prepare(QueryStrings::PIXIV_UPDATE_NAME);
-                return $stmt->execute((array) $item);
+                return $stmt->execute((array) $this);
             }else{
                 $stmt = $con->prepare(QueryStrings::PIXIV_UPDATE_NO_NAME);
-                return $stmt->execute((array) $item);
+                return $stmt->execute((array) $this);
             }
         }catch(PDOException $e){
-            echo "Error on update {$e->getMessage()}";
+            return "Error on update {$e->getMessage()}";
         }
     }
 }
