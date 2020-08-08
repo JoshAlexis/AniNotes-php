@@ -1,4 +1,6 @@
 const button = document.querySelector(".close");
-button.addEventListener('click', () => {
-    button.parentElement.remove();
-});
+if(button !== null){
+    button.addEventListener('click', () => {
+        button.parentElement.remove();
+    });
+}
