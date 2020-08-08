@@ -4,17 +4,13 @@ require_once "./utils/FetchModelData.php";
 require_once "./utils/TableNames.php";
 $con = DBConnection::connect();
 $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
-$post = false;
-if(isset($_POST['idPixiv'])){
-    $post = true;
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css?1.0">
     <style>
         input[type=number]::-webkit-inner-spin-button,
         input[type=number]::-webkit-outer-spin-button{
@@ -27,18 +23,18 @@ if(isset($_POST['idPixiv'])){
         <nav class="navbar navbar-dark bg-primary">
             <a href="./index.php" class="navbar-brand">Aninotes</a>
         </nav>
-        <?php if($post){?>
+        <?php if(isset($_SESSION['message'])){?>
             <div class="row">
                 <div class="col-md-4 m-auto pt-4">
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <p>Post Request Working</p>
+                        <p><?= $_SESSION['msg_info'] ?></p>
                         <button type="button" class="close" data-diss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                 </div>
             </div>
-        <?php }?>
+        <?php session_unset(); }?>
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center text-primary">Pixiv</h1>
@@ -68,7 +64,7 @@ if(isset($_POST['idPixiv'])){
                                 <td><?= $pixiv->Content ?></td>
                                 <td><?= $pixiv->Quality ?></td>
                                 <td><?= $pixiv->Favorite ?></td>
-                                <td><a href="./editPixiv.php" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php?id=<?= $pixiv->Id ?>" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <?php } ?>
                         </tbody>
@@ -86,6 +82,6 @@ if(isset($_POST['idPixiv'])){
     <!-- <script src="./js/jquery-3.5.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>  -->
-    <script src="./js/app.js"></script>
+    <script src="./js/app.js?1.0"></script>
 </body>
 </html>
