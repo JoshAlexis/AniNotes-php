@@ -64,7 +64,7 @@ $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
                                 <td><?= $pixiv->Content ?></td>
                                 <td><?= $pixiv->Quality ?></td>
                                 <td><?= $pixiv->Favorite ?></td>
-                                <td><a href="./editPixiv.php?id=<?= $pixiv->Id ?>" class="btn btn-primary">Edit</a></td>
+                                <td><a href="./editPixiv.php?id=<?= $pixiv->idPixiv ?>" class="btn btn-primary">Edit</a></td>
                             </tr>
                             <?php } ?>
                         </tbody>

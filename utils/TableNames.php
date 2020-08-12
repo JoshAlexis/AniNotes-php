@@ -1,6 +1,6 @@
 <?php 
 
-final class TableNames{
+interface TableNames{
     public const PIXIV = "PIXIV";
     public const ILLUSTRATORS = "ILLUSTRATORS";
     public const SAUCES = "SAUCES";

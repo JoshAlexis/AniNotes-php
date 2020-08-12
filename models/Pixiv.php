@@ -29,6 +29,7 @@ class Pixiv extends Model{
                 $stmt->bindParam(":quality", $this->quality);
                 $stmt->bindParam(":favorite", $this->favorite);
                 $stmt->bindParam(":link", $this->link);
+                $stmt->bindParam(":id", $id);
                 
                 return $stmt->execute();
 
@@ -41,6 +42,7 @@ class Pixiv extends Model{
                 $stmt->bindParam(":quality", $this->quality);
                 $stmt->bindParam(":favorite", $this->favorite);
                 $stmt->bindParam(":link", $this->link);
+                $stmt->bindParam(":id", $id);
 
                 return $stmt->execute();
             }
@@ -49,15 +51,19 @@ class Pixiv extends Model{
         }
     }
 
-    public function update(PDO $con){
-        try{
-            if($this->pixivName !== "" || $this->pixivName !== null){
-                $stmt = $con->prepare(QueryStrings::PIXIV_UPDATE_NAME);
-                return $stmt->execute((array) $this);
-            }else{
-                $stmt = $con->prepare(QueryStrings::PIXIV_UPDATE_NO_NAME);
-                return $stmt->execute((array) $this);
-            }
+    public function update(PDO $con, $id){
+        try{            
+                $stmt = $con->prepare(QueryStrings::PIXIV_UPDATE);
+
+                $stmt->bindParam(":idPixiv", $this->idPixiv);
+                $stmt->bindParam(":pixivName", $this->pixivName);
+                $stmt->bindParam(":content", $this->content);
+                $stmt->bindParam(":quality", $this->quality);
+                $stmt->bindParam(":favorite", $this->favorite);
+                $stmt->bindParam(":link", $this->link);
+                $stmt->bindParam(":id", $id);
+                
+                return $stmt->execute();
         }catch(PDOException $e){
             return "Error on update {$e->getMessage()}";
         }
