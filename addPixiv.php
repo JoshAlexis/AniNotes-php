@@ -49,7 +49,7 @@ if(isset($_POST['idPixiv'])){
             <div class="row">
                 <div class="col-md-4 m-auto pt-4">
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <p><?= $result ?></p>
+                        <p><?= $_SESSION['msg_info'] ?></p>
                         <button type="button" class="close" data-diss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -66,6 +66,10 @@ if(isset($_POST['idPixiv'])){
         <section class="row">
             <div class="col-md-4 m-auto">
                 <form method="POST" action="./addPixiv.php">
+                    <div class="form-group">
+                        <label for="Link">Pixiv Link</label>
+                        <input type="url" name="Link" class="form-control" required>
+                    </div>
                     <div class="form-group">
                         <label for="idPixiv">IdPixiv</label>
                         <input type="number" name="idPixiv" class="form-control"
@@ -98,10 +102,6 @@ if(isset($_POST['idPixiv'])){
                                 <option value="FF+">FF+</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Link">Pixiv Link</label>
-                        <input type="url" name="Link" class="form-control" required>
                     </div>
                     <div class="form-group text-center">
                         <input type="submit" value="addPixiv" class="btn btn-block btn-success"/>

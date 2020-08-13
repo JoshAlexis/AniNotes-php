@@ -29,7 +29,6 @@ class Pixiv extends Model{
                 $stmt->bindParam(":quality", $this->quality);
                 $stmt->bindParam(":favorite", $this->favorite);
                 $stmt->bindParam(":link", $this->link);
-                $stmt->bindParam(":id", $id);
                 
                 return $stmt->execute();
 
@@ -42,7 +41,6 @@ class Pixiv extends Model{
                 $stmt->bindParam(":quality", $this->quality);
                 $stmt->bindParam(":favorite", $this->favorite);
                 $stmt->bindParam(":link", $this->link);
-                $stmt->bindParam(":id", $id);
 
                 return $stmt->execute();
             }

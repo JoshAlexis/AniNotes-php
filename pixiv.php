@@ -3,7 +3,13 @@ require_once "./models/DBConnection.php";
 require_once "./utils/FetchModelData.php";
 require_once "./utils/TableNames.php";
 $con = DBConnection::connect();
-$pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
+$pixivList = [];
+if(isset($_POST['chunk']) && !empty($_POST['chunk'])){
+    $chunk = $_POST['chunk'];
+    $pixivList = FetchModelData::getDataWhereLike($con, TableNames::PIXIV, $chunk);
+}else{
+    $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +41,16 @@ $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
                 </div>
             </div>
         <?php session_unset(); }?>
+        <div class="row">
+            <div class="col-md-4 m-auto pt-4">
+                <form action="pixiv.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="chunk" class="form-control"
+                        placeholder="Write and press enter...">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-center text-primary">Pixiv</h1>
@@ -82,6 +98,6 @@ $pixivList = FetchModelData::fetchAllPixiv($con,TableNames::PIXIV);
     <!-- <script src="./js/jquery-3.5.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>  -->
-    <script src="./js/app.js?1.0"></script>
+    <script src="./js/app.js?2.0"></script>
 </body>
 </html>

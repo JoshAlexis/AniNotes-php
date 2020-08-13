@@ -3,9 +3,9 @@ interface QueryStrings{
     public const PIXIV_INSERT_NAME = "INSERT INTO pixiv (idPixiv,pixivName,content,quality,favorite,link) VALUES (:idPixiv, :pixivName, :content, :quality, :favorite, :link)";
     public const PIXIV_INSERT_NO_NAME = "INSERT INTO pixiv (idPixiv,content,quality,favorite,link) VALUES (:idPixiv, :content, :quality, :favorite, :link)";
     public const PIXIV_UPDATE = "UPDATE pixiv SET idPixiv=:idPixiv, pixivName=:pixivName, content=:content, quality=:quality, favorite=:favorite, link=:link WHERE Id=:id";
-    public const PIXIV_FETCH = "SELECT * FROM pixiv LIMIT 100";
+    public const PIXIV_FETCH = "SELECT * FROM pixiv ORDER BY Id DESC LIMIT 50";
     public const PIXIV_FETCH_ID = "SELECT * FROM pixiv WHERE idPixiv=:id";
-    public const PIXIV_FETCH_WHERE = "SELECT * FROM pixiv WHERE content LIKE :word OR pixivName LIKE :word";
+    public const PIXIV_FETCH_WHERE = "SELECT * FROM pixiv WHERE Content LIKE :chunk OR pixivName LIKE :chunk OR idPixiv LIKE :chunk";
 
     public const ILLUSTRATORS_INSERT = "INSERT INTO illustrators (`Name`, Source, Content, Comments) VALUES (:name, :source, :content, :comments)";
     public const ILLUSTRATORS_UPDATE = "UPDATE illustrators SET `Name`=:name, Source=:source, Content=:content, Comments=:comments";
